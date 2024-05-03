@@ -1,0 +1,90 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2706
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Medium;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\fnil\fcharset0 HelveticaNeue-Bold;}
+{\colortbl;\red255\green255\blue255;\red10\green96\blue255;\red0\green0\blue0;\red107\green0\blue1;
+\red255\green255\blue255;\red0\green0\blue0;\red15\green112\blue1;\red29\green29\blue29;\red236\green236\blue236;
+\red29\green29\blue29;\red0\green10\blue24;\red9\green60\blue148;}
+{\*\expandedcolortbl;;\cssrgb\c0\c47843\c100000;\cssrgb\c0\c0\c0\c7843;\cssrgb\c50196\c0\c0;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c0\c50196\c0;\cssrgb\c14902\c14902\c14902;\cssrgb\c94118\c94118\c94118;
+\cssrgb\c14902\c14902\c14902\c74902;\cssrgb\c0\c3922\c12549\c3137;\cssrgb\c1569\c31765\c64706;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1929. Concatenation of Array\
+02/05/2024\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b\fs24 \cf4 \cb5 \strokec4 # Intuition
+\f2\b0 \cf0 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb5 \strokec7 \
+My intuition is not the most efficient, but systematic were concatenation and duplication. I originally thought that the conditions here\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf8 \cb9 \strokec8 Given an integer array\'a0
+\f2\fs18 \cf10 \cb11 \strokec10 nums
+\f3\fs28 \cf8 \cb9 \strokec8 \'a0of length\'a0
+\f2\fs18 \cf10 \cb11 \strokec10 n
+\f3\fs28 \cf8 \cb9 \strokec8 , you want to create an array\'a0
+\f2\fs18 \cf10 \cb11 \strokec10 ans
+\f3\fs28 \cf8 \cb9 \strokec8 \'a0of length\'a0
+\f2\fs18 \cf10 \cb11 \strokec10 2n
+\f3\fs28 \cf8 \cb9 \strokec8 \'a0where\'a0
+\f2\fs18 \cf10 \cb11 \strokec10 ans[i] == nums[i]
+\f3\fs28 \cf8 \cb9 \strokec8 \'a0and\'a0
+\f2\fs18 \cf10 \cb11 \strokec10 ans[i + n] == nums[i]
+\f3\fs28 \cf8 \cb9 \strokec8 \'a0for\'a0
+\f2\fs18 \cf10 \cb11 \strokec10 0 <= i < n
+\f3\fs28 \cf8 \cb9 \strokec8 \'a0(
+\f4\b 0-indexed
+\f3\b0 ).\
+\
+Where I thought the second condition would be found in my loop somehow. I quickly realized it was just describing the desired outcome once I scribbled a possible answer. 
+\f2\fs24 \cf0 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb5 \strokec4 # Approach
+\f2\b0 \cf0 \cb1 \strokec6 \
+\
+\
+
+\f1\b \cf4 \cb5 \strokec4 # Complexity
+\f2\b0 \cf0 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf12 \cb5 \strokec12 -\cf0 \strokec6  Time complexity:\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf7 \cb5 \strokec7 \
+O(n), where n is length of list.\cf0 \cb1 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf12 \cb5 \strokec12 1 \'97> for loop iteration is O(n)\
+2 \'97> append in ans takes O(1), operation is done n times\
+3 -> concatenation is O(n) where n takes the short list but\'85 here same n\cf0 \cb1 \strokec6 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf4 \cb5 \strokec4 # Code
+\f2\b0 \cf0 \cb1 \strokec6 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb5 ```\cb1 \
+\cb5 class Solution(object):\cb1 \
+\cb5     def getConcatenation(self, nums):\cb1 \
+\cb5         """\cb1 \
+\cb5         :type nums: List[int]\cb1 \
+\cb5         :rtype: List[int]\cb1 \
+\cb5         """\cb1 \
+\cb5         ans = []\cb1 \
+\cb5         length = len(nums)\cb1 \
+\cb5         for i in range (0, length):\cb1 \
+\cb5             x = nums[i]\cb1 \
+\cb5             ans.append(x)\cb1 \
+\cb5         return nums+ans\cb1 \
+\
+\cb5 ```\cb1 \
+}
