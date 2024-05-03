@@ -1,0 +1,35 @@
+1929. Concatenation of Array
+02/05/2024
+
+Intuition
+
+My intuition is not the most efficient, but systematic were concatenation and duplication. I originally thought that the conditions here
+
+Given an integer array nums of length n, you want to create an array ans of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).
+
+Where I thought the second condition would be found in my loop somehow. I quickly realized it was just describing the desired outcome once I scribbled a possible answer. 
+
+Complexity
+- Time complexity:
+
+O(n), where n is length of list.
+
+1 —> for loop iteration is O(n)
+2 —> append in ans takes O(1), operation is done n times
+3 -> concatenation is O(n) where n takes the short list but… here same n
+
+Code
+
+class Solution(object):
+    def getConcatenation(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        ans = []
+        length = len(nums)
+        for i in range (0, length):
+            x = nums[i]
+            ans.append(x)
+        return nums+ans
+
