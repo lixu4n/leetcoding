@@ -1,0 +1,14 @@
+26. Removing duplicates from sorted array
+17/17/2024
+
+Intuition
+
+My initial intuition for this problem was to use nested loops and two pointers but was not necessary in the end since it is aa sorted array 
+
+
+Complexity
+- Time complexity:
+
+O(n), where n is length of list.
+
+1 —> for loop iteration is O(n)
